@@ -1,0 +1,41 @@
+{
+  "product": {
+    "aqua": {
+      "aqua_c_p1": "We produce various liquids about 16 types of A,B,C,D dentin liquids, 16 types of A,B,C,D Enamel liquids, 8 types of Effect liquid, 2 types of opaque liquid.",
+      "aqua_c_p2_1": "As aqua base, this product not containing hydrochloric acid is",
+      "aqua_c_p2_2": "and does not cause equipment erosion.",
+      "blue": " harmless to our body ",
+      "h4": "Component of aqua coloring liquid"
+    },
+    "etching": {
+      "add": "NOTE: the instructional manual of ZIRCOS-E can be downloaded at the Customer Menu Bar",
+      "etching_s_p1": " is a surface treatment technology solution that activates the ions in zirconia surface which strengthens the bond with porcelain and prevents exfoliation.",
+      "etching_s_p2": "By applying this technology, porcelain can be layered 0.3mm onto the full zirconia surface to remove the characteristic opalescence of zirconia and to perfectly reproduce the shade.",
+      "title": "에칭 솔루션"
+    },
+    "hycera": [
+      "v1677989410/bioden/hycera1_eng_up5keo",
+      "v1677989411/bioden/hycera2_eng_hu8rcp",
+      "v1677989411/bioden/hycera3_eng_fmuw4c"
+    ],
+    "jig-gel": {
+      "lowprice": "One set contains six items, and the total weight is approximately 100g, which is equivalent to the price of one package of pattern resin.",
+      "p1": "This is an injection-type light-curing resin product that can easily design implant jigs. This is an innovative product that abandons the method of absorbing resin powder into solutions with the use of a brush and casting it into implant abutment several times."
+    },
+    "zircos-com": {
+      "flow_1": "This hybrid product containing Zirconia filler has excellent usability due to its strength and wear resistance.",
+      "flow_2": "This product has all kinds of colors from the Shade Guide.",
+      "hard_1": "This hybrid product containing Zirconia filler has excellent usability due to its strength and wear resistance.",
+      "hard_2": "This product has all kinds of colors from the Shade Guide.",
+      "universal_1": "This hybrid product containing Zirconia filler has excellent usability due to its strength and wear resistance.",
+      "universal_2": "Consists of one body-concept enamel resin, this product is an easy, quick and convenient way to design indirect resin inlay."
+    },
+    "zircos-e": {
+      "first": " is product that is easy to process which strengthens physical characteristics such as bond strength, adhesion, impact resistance and wear resistance by applying high volume press of 200 ton.",
+      "firstblue": "ZIRCOS-E Block",
+      "second": "Shade Block is the product of prominent biocompatibility by ceramicion-coating processing of zirconia powder and advanced physical technology.",
+      "third": "Multiple blocks of A, B, C, D types have been produced and enhanced.",
+      "zircosblocktitle": "　"
+    }
+  }
+}

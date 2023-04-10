@@ -1,0 +1,41 @@
+{
+  "product": {
+    "aqua": {
+      "aqua_c_p1": "A、B、C、D系列の16種類のDentin色、16種類のEnamel色、8種類のEffect色、2種類のOpaque色を生産しています。",
+      "aqua_c_p2_1": "アクアベースなので塩酸は含まれてないので",
+      "aqua_c_p2_2": "で機器を腐食させない特徴があります。",
+      "blue": "人体に無害",
+      "h4": "Aqua Coloring Liquidの構成"
+    },
+    "etching": {
+      "add": "ZIRCOS-Eの使用説明書は、Customerメニューバーからダウンロードできます。",
+      "etching_s_p1": "は液体ソリューションを使用してジルコニア表面のイオンを活性化させ、porcelainとの接着強度を強化し、剥離現象を防止する表面処理技術ソリューションです。",
+      "etching_s_p2": "この技術を応用して、full zir表面に0.3mmのporcelainを乗せることで、ジルコニア特有の不自然な色合いを取り除き、優れたシェードを再現することができます。",
+      "title": "エッチングソリューション"
+    },
+    "hycera": [
+      "v1677989410/bioden/hycera1_jpn_ddzaky",
+      "v1677989411/bioden/hycera2_jpn_zkeo9h",
+      "v1677989411/bioden/hycera3_jpn_wt1zky"
+    ],
+    "jig-gel": {
+      "lowprice": "(1セットにつき6つ含まれ、総重量は約100Gであり、1本のパターンレジンの値段と同等です)",
+      "p1": "注入式投入法で製造された光重合型レジンであり、インプラントJigを簡単に製造できる製品です。従来はレジンパウダーをブラシを使用し、液に吸収させた後、インプラントアバットメントに無数に積み重ねる方法から脱皮した画期的な製品です。"
+    },
+    "zircos-com": {
+      "flow_1": "Zirconia fillerが含まれ、優れた強度と耐摩耗性を持つHybrid製品で、作業性が優れた粘度を持っています。",
+      "flow_2": "当社はShade Guideの全ての色を生産しています。",
+      "hard_1": "Zirconia fillerが含まれ、優れた強度と耐摩耗性を持つHybrid製品で、作業性が優れた粘度を持っています。",
+      "hard_2": "当社はShade Guideの全ての色を生産しています。",
+      "universal_1": "Zirconia fillerが含まれ、優れた強度と耐摩耗性を持つHybrid製品です。",
+      "universal_2": "One BodyコンセプトのEnamel resinを使用して、Indirect resin Inlay製作時に簡単かつ迅速に使用できます。"
+    },
+    "zircos-e": {
+      "first": "は200トンの高圧成形によって接着強度、密着力、耐衝撃性、耐摩耗性などの物理的特性を向上させ、非常に簡単にブロック加工ができる製品です。",
+      "firstblue": "ZIRCOS-Eブロック",
+      "second": "Shadeブロックは、ジルコニア粉にセラミックイオンコーティング処理と物理技術を向上させ、生体適合性に優れた製品です。",
+      "third": "A、B、C、D系列の様々なブロックは常に生産されています。",
+      "zircosblocktitle": "ジルコニアEブロック"
+    }
+  }
+}

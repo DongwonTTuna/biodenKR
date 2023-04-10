@@ -1,28 +1,28 @@
-import { component$ } from '@builder.io/qwik';
-import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city';
-import { RouterHead } from './components/router-head/router-head';
-
-import './global.css';
-
+import { component$ } from "@builder.io/qwik";
+import {
+  QwikCityProvider,
+  RouterOutlet,
+  ServiceWorkerRegister,
+} from "@builder.io/qwik-city";
+import { RouterHead } from "./components/HTMLHeader/Header";
+import 'swiper/swiper-bundle.min.css'
+import "./global.css";
+import { QwikSpeakProvider } from "qwik-speak";
+import { config } from "./speak-config";
+import { translationFn } from './speak-functions';
 export default component$(() => {
-  /**
-   * The root of a QwikCity site always start with the <QwikCityProvider> component,
-   * immediately followed by the document's <head> and <body>.
-   *
-   * Dont remove the `<head>` and `<body>` elements.
-   */
-
   return (
-    <QwikCityProvider>
-      <head>
-        <meta charSet="utf-8" />
-        <link rel="manifest" href="/manifest.json" />
-        <RouterHead />
-      </head>
-      <body lang="en">
-        <RouterOutlet />
-        <ServiceWorkerRegister />
-      </body>
-    </QwikCityProvider>
+    <QwikSpeakProvider config={config} translationFn={translationFn}>
+      <QwikCityProvider>
+        <head>
+          <meta charSet="utf-8" />
+          <RouterHead />
+        </head>
+        <body lang="ko" class="relative h-fit min-h-[1300px] min-w-fit w-full">
+          <RouterOutlet />
+          <ServiceWorkerRegister />
+        </body>
+      </QwikCityProvider>
+    </QwikSpeakProvider>
   );
 });

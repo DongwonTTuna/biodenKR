@@ -1,206 +1,935 @@
-/**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
- */
-
-:root {
-  --qwik-dark-blue: #006ce9;
-  --qwik-light-blue: #18b6f6;
-  --qwik-light-purple: #ac7ff4;
-  --qwik-dark-purple: #713fc2;
-}
-
-body {
-  background: linear-gradient(90deg, rgba(24, 182, 246, 0.3) 0%, rgba(172, 127, 244, 0.3) 100%);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 200;
-  padding: 10px 0px;
-}
-
-::selection {
-  background: rgb(8, 2, 61);
-  color: white;
-}
-
-h1,
-h2,
-h3 {
-  font-weight: 100;
-}
-
-h1 b,
-h2 b,
-h3 b {
-  font-weight: 300;
-}
-
-h1 {
-  color: white;
-  font-size: 2rem;
-  padding: 0;
-  margin: 0;
-}
-
-h1.hero {
-  margin: 60px 0;
-}
-
-h2 {
-  color: var(--qwik-dark-purple);
-}
-
-input[type='text'],
-button {
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  border-radius: 12px;
-  font-size: 1rem;
-  padding: 10px 20px;
-}
-
-button {
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: white;
-  color: var(--qwik-dark-purple);
-}
-
-button.small {
-  border-radius: 6px;
-  font-size: 0.8rem;
-  padding: 5px 10px;
-}
-
-button.gray {
-  border-color: #aaa;
-  color: #aaa;
-}
-
-a,
-a:active,
-a:visited,
-a:hover {
-  color: black;
+@charset "utf-8";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "Nanum Barun Gothic";
+  font-style: normal;
   font-weight: 400;
-  text-decoration: none;
+  src: local("Nanum Barun Gothic"),
+    url(/assets/fonts/NanumBarunGothicSubset.woff2) format("woff2"),
+    url(/assets/fonts/NanumBarunGothicSubset.woff) format("woff");
 }
-
-.section.bright {
-  background: white;
+@font-face {
+  font-family: "Noto Sans Japanese";
+  font-style: normal;
+  font-weight: 400;
+  src: local("NotoSansJP-Regular"),
+    url(/assets/fonts/NotoSansJP-Regular.woff2) format("woff2"),
+    url(/assets/fonts/NotoSansJP-Regular.woff) format("woff");
 }
-
-.section.dark {
-  background: rgba(50, 50, 50, 0.5);
+@font-face {
+  font-family: "Noto Sans Simplified Chinese";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Noto Sans Simplified Chinese"),
+    url(/assets/fonts/NS_CN.woff2) format("woff2"),
+    url(/assets/fonts/NS_CN.woff) format("woff");
 }
-
-code {
-  background: rgba(230, 230, 230, 0.3);
-  border-radius: 4px;
-  padding: 2px 6px;
-}
-
-ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.page {
-  width: 90vw;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: linear-gradient(90deg, rgba(24, 182, 246, 0.6) 0%, rgba(172, 127, 244, 0.6) 100%);
-  overflow: hidden;
-  border-radius: 6px;
-}
-
-.container {
-  padding: 20px 10px;
-}
-
-.container.center {
-  text-align: center;
-}
-
-.container.mh-300 {
-  min-height: 300px;
-}
-
-.topics {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-/* used icon pack: https://www.svgrepo.com/collection/phosphor-thin-icons */
-.icon:before {
-  width: 18px;
-  height: 18px;
-  content: '';
-  display: inline-block;
-  margin-right: 5px;
-  position: relative;
-  top: 2px;
-}
-
-.icon-cli:before {
-  background-image: url("data:image/svg+xml,%3Csvg fill='%23000000' width='20px' height='20px' viewBox='0 0 256 256' id='Flat' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M122.499 124.87646a4.00053 4.00053 0 0 1 0 6.24708l-40 32a4.0002 4.0002 0 0 1-4.998-6.24708L113.59668 128 77.501 99.12354a4.0002 4.0002 0 0 1 4.998-6.24708ZM175.99414 156h-40a4 4 0 0 0 0 8h40a4 4 0 1 0 0-8ZM228 56.48535v143.0293A12.49909 12.49909 0 0 1 215.51465 212H40.48535A12.49909 12.49909 0 0 1 28 199.51465V56.48535A12.49909 12.49909 0 0 1 40.48535 44h175.0293A12.49909 12.49909 0 0 1 228 56.48535Zm-8 0A4.49023 4.49023 0 0 0 215.51465 52H40.48535A4.49023 4.49023 0 0 0 36 56.48535v143.0293A4.49023 4.49023 0 0 0 40.48535 204h175.0293A4.49023 4.49023 0 0 0 220 199.51465Z'/%3E%3C/svg%3E");
-}
-
-.icon-apps:before {
-  background-image: url("data:image/svg+xml,%3Csvg fill='%23000000' width='20px' height='20px' viewBox='0 0 256 256' id='Flat' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M216 44.00586H40a12.01375 12.01375 0 0 0-12 12v144a12.01375 12.01375 0 0 0 12 12H216a12.01375 12.01375 0 0 0 12-12v-144A12.01375 12.01375 0 0 0 216 44.00586Zm4 156a4.00458 4.00458 0 0 1-4 4H40a4.00458 4.00458 0 0 1-4-4v-144a4.00458 4.00458 0 0 1 4-4H216a4.00458 4.00458 0 0 1 4 4Zm-144-116a8 8 0 1 1-8-8A7.99977 7.99977 0 0 1 76 84.00586Zm40 0a8 8 0 1 1-8-8A7.99977 7.99977 0 0 1 116 84.00586Z'/%3E%3C/svg%3E");
-}
-
-.icon-community:before {
-  background-image: url("data:image/svg+xml,%3Csvg fill='%23000000' width='20px' height='20px' viewBox='0 0 256 256' id='Flat' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M246.40381 143.19434a4.00061 4.00061 0 0 1-5.60108-.7959A55.57857 55.57857 0 0 0 196 120a4 4 0 0 1 0-8 28 28 0 1 0-27.50732-33.26074 4.00013 4.00013 0 0 1-7.85987-1.49219 36.00191 36.00191 0 1 1 54.06494 37.50513 63.58068 63.58068 0 0 1 32.50147 22.84155A3.99993 3.99993 0 0 1 246.40381 143.19434Zm-57.24268 71.05273a3.9998 3.9998 0 1 1-7.1914 3.50391 60.02582 60.02582 0 0 0-107.93946 0 3.9998 3.9998 0 1 1-7.1914-3.50391 67.56008 67.56008 0 0 1 40.90625-35.20581 44 44 0 1 1 40.50976 0A67.56139 67.56139 0 0 1 189.16113 214.24707ZM128 176a36 36 0 1 0-36-36A36.04061 36.04061 0 0 0 128 176ZM60 112A28 28 0 1 1 87.50732 78.73828a3.99989 3.99989 0 1 0 7.85938-1.49219A36.00177 36.00177 0 1 0 41.30225 114.7522 63.5829 63.5829 0 0 0 8.79883 137.5957a4 4 0 1 0 6.39648 4.80469A55.58072 55.58072 0 0 1 60 120a4 4 0 0 0 0-8Z'/%3E%3C/svg%3E");
-}
-
-@media screen and (min-width: 768px) {
+@layer components {
+  html,
   body {
-    padding: 60px 0px;
+    @apply w-full h-full text-[#3d3d3d] leading-[1em];
+    font-family: "Nanum Barun Gothic", "Noto Sans Japanese",
+      "Noto Sans Simplified Chinese", "Malgun Gothic", "맑은 고딕", "나눔 고딕",
+      "Dotum", "돋움", "굴림", Sans-serif;
   }
-
-  h1 {
-    font-size: 3rem;
+  * {
+    @apply m-0 p-0;
   }
-
-  .page {
-    width: 70vw;
+  a:visited,
+  a:link,
+  a:active,
+  a:hover {
+    @apply text-[#3d3d3d] no-underline text-inherit border-[none];
   }
-
-  .container {
-    padding: 30px 70px;
+  #header {
+    @apply relative flex items-center w-full border-t-[5px] border-t-[#ce2e1e] border-solid bg-white;
   }
-
-  .topics {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+  #header .inner {
+    @apply flex flex-col mt-4 lg:mt-0 lg:flex-row gap-2 justify-around items-center min-h-[90px] w-full h-max mx-auto relative;
   }
-}
-
-/**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
- */
-html {
-  line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
-body {
-  padding: 0;
-  line-height: inherit;
+  .header_ul_li {
+    @apply float-left relative w-[160px] h-[33px] cursor-pointer;
+  }
+  .header_ul .li_a {
+    @apply pl-[10px] w-auto block text-[16px] leading-[33px] text-[#000] font-[350];
+  }
+  .header_ul_li:hover .li_a {
+    @apply text-[#bf1909];
+  }
+  .lang_box {
+    @apply absolute right-10 top-0 w-24 min-h-[28px] bg-[#666] text-white z-10;
+  }
+  .lang_box .select_box {
+    @apply mx-2 my-1  leading-[22px] text-sm w-24 cursor-pointer;
+  }
+  .lang_box .select_box.off {
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_18,f_auto/v1677989413/bioden/lang_zrytly) no-repeat 65px -15px;
+  }
+  .lang_box .select_box.on {
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_18,f_auto/v1677989413/bioden/lang_zrytly) no-repeat 65px 5px;
+  }
+  .lang_box .select_lang {
+    @apply mx-2 my-1 w-24 hidden;
+  }
+  .lang_box .selected {
+    @apply block;
+  }
+  .lang_box .select_lang .item {
+    @apply leading-[22px] text-[#fff] text-sm;
+  }
+  .submenu {
+    @apply absolute top-[55px] w-[128px] h-[115px] hidden pt-[10px] z-[999];
+  }
+  .submenu li a:hover {
+    @apply text-[#d71805] p-0;
+  }
+  .submenu li {
+    @apply float-none h-auto w-[155px] pl-[2em];
+  }
+  .submenu > li > a {
+    @apply text-[14px] leading-[24px] text-[#0f0906] inline-block bg-none p-0;
+  }
+  .submenu:after {
+    @apply content-none block clear-both;
+  }
+  #container #content .right h3 {
+    @apply w-[758px] h-12 mt-4 text-3xl leading-[51px] pb-12 border-b-2 border-[#231815] pt-4;
+  }
+  #container #content .right {
+    @apply w-fit ml-[350px] pb-[150px];
+  }
+  #container .common_top .top_text {
+    @apply w-[1000px] text-sm text-white absolute left-[22%] top-16 hidden;
+  }
+  /* company */
+  #container #content .right .ceo_message {
+    @apply bg-[rgba(255,255,255,0.6)] bg-blend-lighten;
+    @apply w-[760px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_491,f_auto/v1677989408/bioden/company_img_uerh60) no-repeat top right;
+  }
+  #container #content .right .ceo_message .ceo_p1 {
+    @apply w-[310px] h-20 text-2xl leading-7 pt-11 pb-32;
+  }
+  #container #content .right .ceo_message .ceo_p1 .green {
+    @apply text-[#269885] leading-9;
+  }
+  #container #content .right .ceo_message .ceo_p2 {
+    @apply w-[370px] text-xl leading-7 mt-1;
+  }
+  #container #content .right .ceo_message .ceo_p3 {
+    @apply w-44 mx-auto text-2xl mt-32 leading-7 border-b-2 pb-2 border-solid border-black mb-16 text-center whitespace-nowrap;
+  }
+  #container #content .right .ceo_message .ceo_p4 {
+    @apply w-[758px] text-base leading-6 text-justify;
+  }
+  #container #content .right .ceo_message .ceo_p5 {
+    @apply w-32 leading-7 whitespace-nowrap;
+  }
+  #container #content .right .ceo_message img {
+    @apply w-32 h-28 mt-[-35px] ml-[-10px] float-right;
+  }
+  /*company_overview*/
+  #container {
+    @apply w-full;
+  }
+  #container #content {
+    @apply w-full h-auto mx-auto my-0 after:clear-both after:content-[""] after:table;
+  }
+  #container #content:after {
+    zoom: 1;
+  }
+  #container .company_top {
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_3840,f_auto/v1677989408/bioden/company_top_x2u10r) no-repeat 0 0;
+    @apply w-full h-[145px] relative right-0 left-0 my-0 border-b-[#a29e9e] border-b border-solid bg-cover;
+  }
+  #container .common_top h2 {
+    @apply text-white w-fit h-[50px] leading-[50px] absolute mx-auto my-0 pt-7 left-[21.9%];
+  }
+  #container .common_top h2 .h2p {
+    @apply text-[40px];
+  }
+  #container .common_top ul {
+    @apply relative h-[39px] text-right top-[107px] w-full bg-white;
+  }
+  #container .common_top ul li {
+    @apply text-[15px] text-[#505050] pt-2.5;
+  }
+  #container .common_top ul li img {
+    @apply px-0.5 py-0;
+  }
+  #container #content .con_wrap {
+    @apply w-[1200px] mx-auto my-0;
+  }
+  #container #content .left_menu {
+    @apply w-[242px] float-left pl-[110px] pr-0 pt-[67px] pb-0;
+  }
+  #container #content .left_menu ul {
+    @apply w-[197px] h-[165px];
+  }
+  #container #content .left_menu ul li {
+    @apply w-[197px] h-[34px] leading-[34px] text-[#444444] text-[15px] indent-[20px] border-b-white border-b border-solid;
+    background: #ebebeb;
+  }
+  #container #content .left_menu ul li a {
+    @apply w-full h-[34px] leading-[34px];
+  }
+  #container #content .company_left ul .left_menu_t {
+    @apply text-white;
+    background: #169e88;
+  }
+  #container #content .company_left ul .on a {
+    @apply text-[#169e88];
+  }
+  #container #content .company_left ul .li:hover {
+    @apply text-[#169e88];
+  }
+  #container #content .left {
+    @apply w-[1200px] mx-auto my-0;
+  }
+  #container #content .left .lnb {
+    @apply float-left pl-[110px] pr-0 pt-[67px] pb-0;
+  }
+  #container #content .left .lnb > #lnbmenu {
+    @apply w-[197px] h-[34px] leading-[34px];
+  }
+  #container #content .left .lnb > #lnbmenu .left_menu_t {
+    @apply text-white;
+    background: #2368a8;
+  }
+  #container #content .left .lnb > #lnbmenu > li {
+    @apply w-[197px] indent-[20px] border-b-white border-b border-solid;
+    background: #ebebeb;
+  }
+  #container #content .left .lnb > #lnbmenu > li > a {
+    @apply block text-sm h-[34px] leading-[34px] hover:text-[#2368a8];
+  }
+  #container #content .left .lnb > #lnbmenu > .on > a {
+    @apply text-[#2368a8];
+  }
+  #container #content .left .lnb > #lnbmenu li ul li {
+    @apply indent-[0px];
+  }
+  #container #content .left .lnb > #lnbmenu li ul li p {
+    @apply block leading-6 text-[#787878] text-[13px] ml-10 hover:text-[#3b3b3b] hover:underline;
+  }
+  #container #content .left .lnb > #lnbmenu li ul .on1 p {
+    @apply text-[#3b3b3b] underline;
+  }
+  #container #content .left .lnb > #lnbmenu li ul .subsub_last {
+    @apply mb-2.5;
+  }
+  /*company_management*/
+  .management {
+    @apply w-[760px];
+  }
+  .management .philosophy {
+    @apply w-full h-[260px] mb-[50px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_766,f_auto/v1677989417/bioden/philosophy_aphdcw) no-repeat left bottom;
+  }
+  .management .philosophy .philosophy_t {
+    @apply w-full h-[120px];
+  }
+  .management .philosophy .philosophy_t .philosophy_t1 {
+    @apply w-[100px] h-[50px] leading-[50px] text-[28px] float-left text-[#1a587d] ml-0 mr-5 mt-[50px] mb-0;
+  }
+  .management .philosophy .philosophy_t .philosophy_t2 {
+    @apply w-[300px] h-[50px] leading-[50px] text-2xl float-left mt-[50px];
+  }
+  .management .philosophy .manage_left {
+    @apply w-[155px] h-10 float-left text-center text-xl leading-[1.6em] mt-[45px];
+  }
+  .management .philosophy .manage_right {
+    @apply w-[500px] float-left;
+  }
+  .management .philosophy .manage_right .p1 {
+    @apply text-white h-10 leading-10 text-xl;
+  }
+  .management .philosophy .manage_right .p2 {
+    @apply h-[50px] leading-[1.5em] text-xl pt-[30px];
+  }
+  .management .objective {
+    @apply w-[760px];
+  }
+  .management .objective .objective1 {
+    @apply w-full h-[150px] mt-5;
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_760,f_auto/v1677989414/bioden/objective1_avfct2) no-repeat 0 0;
+  }
+  .management .objective .objective2 {
+    @apply w-full h-[150px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_760,f_auto/v1677989414/bioden/objective2_ugji7o) no-repeat 0 0;
+  }
+  .management .objective .objective3 {
+    @apply w-full h-[150px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_760,f_auto/v1677989414/bioden/objective3_z2tyrs) no-repeat 0 0;
+  }
+  .management .objective .objective4 {
+    @apply w-full h-[150px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_760,f_auto/v1677989414/bioden/objective4_paqady) no-repeat 0 0;
+  }
+  .management .objective .objective_t {
+    @apply w-full h-[50px];
+  }
+  .management .objective .objective_t .objective_t1 {
+    @apply w-[100px] h-[50px] leading-[50px] text-[28px] float-left text-[#1a587d] ml-0 mr-5 my-0;
+  }
+  .management .objective .objective_t .objective_t2 {
+    @apply w-[300px] h-[50px] leading-[50px] text-2xl float-left;
+  }
+  .management .objective .manage_left {
+    @apply w-[155px] h-10 float-left text-center text-xl leading-[1.6em] mt-[50px];
+  }
+  .management .objective .manage_right {
+    @apply w-[500px] float-left;
+  }
+  .management .objective .manage_right .p1 {
+    @apply text-white h-10 leading-10 text-xl;
+  }
+  .management .objective .manage_right .p2 {
+    @apply h-[50px] leading-[1.5em] text-xl pt-[30px];
+  }
+  /*company_mission*/
+  #container #content .right .vision {
+    @apply w-full;
+  }
+  #container #content .right .vision .vision_p {
+    @apply text-[25px] h-[42px] leading-10 mt-[17px];
+  }
+  #container #content .right .vision .vision_img {
+    @apply w-[758px] h-[401px];
+  }
+  #container #content .right .vision .vision_img ul {
+    @apply w-[758px] h-[265px] text-center;
+  }
+  #container #content .right .vision .vision_img ul li {
+    @apply w-[200px] h-[250px] float-left text-base leading-[1.5em] text-[#494949];
+  }
+  #container #content .right .vision .vision_img ul .v_list1 {
+    @apply ml-[25px] mr-[55px] mt-[170px] mb-0;
+  }
+  #container #content .right .vision .vision_img ul .v_list2 {
+    @apply mr-[55px] mt-[170px];
+  }
+  #container #content .right .vision .vision_img ul .v_list3 {
+    @apply mt-[170px];
+  }
+  /*company_network*/
+  .network {
+    @apply w-[760px];
+  }
+  .network .global_map {
+    @apply w-[756px] h-[500px] border mt-20 border-solid border-[#d8d8d8];
+  }
+  /*company_organization*/
+  .organization {
+    @apply w-[762px];
+  }
+  .organization p {
+    @apply w-fit mx-auto h-[50px] leading-10 text-3xl mt-12;
+  }
+  .organization img {
+    @apply w-[719px] h-[333px];
+  }
+  /*company_history*/
+  .history {
+    @apply w-[780px];
+  }
+  #container #content .right .history .history_p1 {
+    @apply w-[750px] h-24 text-2xl pt-11 leading-10;
+  }
+  #container #content .right .history .history_p2 {
+    @apply w-[750px] h-10 text-xl leading-8 mt-1 pt-32;
+  }
+  #container #content .right .history .green {
+    @apply text-[#269885];
+  }
+  .career img {
+    @apply w-[284px] float-left pt-32;
+  }
+  .career .dotted {
+    @apply border-b-2 border-dotted border-b-black;
+  }
+  #content dl {
+    @apply mt-6 mb-4 mx-0 pl-[7px];
+  }
+  #content dt {
+    @apply text-lg leading-[29px] text-[#727070] tracking-[-0.3px] font-light;
+  }
+  #content dd {
+    @apply text-lg leading-[29px] tracking-[-0.3px] text-[#727070] font-light;
+  }
+  .index_box_wrap {
+    @apply w-full h-[180px] pb-[38px];
+  }
+  .index_box_wrap .index_box {
+    @apply w-[238px] h-[178px] float-left mr-[11px];
+  }
+  .index_box_wrap .index_box4 {
+    @apply overflow-hidden mr-0;
+  }
+  .index_box_wrap .index_box a {
+    @apply block text-white w-full h-[178px];
+  }
+  .index_box_wrap .index_box4 .box_board a {
+    @apply block h-[15px] float-right overflow-hidden w-[94%];
+  }
+  .index_box_wrap .index_box .box_title {
+    @apply h-[30px] leading-[30px] text-[23px] pl-[15px] pr-0 pt-2.5 pb-0;
+  }
+  .index_box_wrap .index_box .box_cont_l {
+    @apply text-[13px] float-left pl-[15px] pr-0 pt-[17px] pb-0;
+  }
+  .index_box_wrap .index_box .box_cont_r {
+    @apply text-[13px] float-right pl-0 pr-[15px] pt-[17px] pb-0;
+  }
+  .index_box_wrap .index_box1 {
+    @apply ml-[7px];
+  }
+  #footer {
+    @apply w-full h-[100px] absolute mb-0 bottom-0 inset-x-0;
+    background: #c1c7c7;
+  }
+  #footer .inner {
+    @apply w-[1000px] mx-auto my-0;
+  }
+  #footer img {
+    @apply float-left pt-[17px];
+  }
+  #footer address {
+    @apply w-[750px] float-left text-[11.6px] leading-[21px] text-[#333233] relative ml-[30px] pt-5;
+  }
+  #footer span {
+    @apply px-[15px] py-0;
+  }
+  body {
+    @apply w-full min-w-[1000px];
+  }
+  body * {
+    @apply m-0 p-0;
+  }
+  ul {
+    list-style: none;
+  }
+  img {
+    @apply border-0 border-none;
+  }
+  a {
+    @apply no-underline text-[#333];
+  }
+  #wrap {
+    @apply min-w-fit w-full;
+  }
+  .clearfix {
+    zoom: 1;
+  }
+  .clearfix:before,
+  .clearfix:after {
+    @apply content-[""] table;
+  }
+  .clearfix:after {
+    @apply clear-both;
+  }
+  /*contact_us*/
+  #container .contact_top {
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_3840,f_auto/v1677989409/bioden/contact_top_sdhppa) no-repeat 0 0;
+    @apply w-full h-[145px] relative mx-auto my-0 border-b-[#a29e9e] border-b border-solid bg-cover;
+  }
+  #container #content .contact_left ul .left_menu_t {
+    @apply text-white;
+    background: #899314;
+  }
+  #container #content .contact_left ul .on a {
+    @apply text-[#899314];
+  }
+  #container #content .contact_left ul .li:hover {
+    @apply text-[#899314];
+  }
+  .contact {
+    @apply w-[762px] h-[345px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_407,f_auto/v1677989408/bioden/contact_img_wbagsf) no-repeat top right;
+  }
+  .contact_p2 {
+    @apply w-[345px] h-10 text-[25px] leading-[1.4em] mt-10;
+  }
+  .contact_p3 {
+    @apply w-[470px] h-[30px] text-sm leading-[1.7em];
+  }
+  #container #content .right .contact .green2 {
+    @apply text-[#899314];
+  }
+  #container #content .right .map {
+    @apply w-[756px] h-[400px] border-2 border-solid border-[#e4e5e5];
+  }
+  #container #content .right .contact .gray_box {
+    @apply w-[510px] h-[124px] border border-solid border-[#c6d2d9];
+    background: #f2f0eb;
+  }
+  #container #content .right .contact .gray_box .gray_box_p1 {
+    @apply h-[35px] indent-[10px] text-sm;
+  }
+  #container #content .right .contact .gray_box .gray_box_p2 {
+    @apply h-[31px] leading-[31px] indent-[40px] text-[15px] font-[bold] underline;
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_31,f_auto/v1677989409/bioden/email_icon_f0pqiq) no-repeat 5px 0;
+  }
+  #container #content .right .contact .gray_box .gray_box_p3 {
+    @apply h-10 leading-[35px] indent-[10px] text-sm;
+  }
+  /*inquiry_t*/
+  #container #content .inquiry_left ul .left_menu_t {
+    @apply text-white;
+    background: #899314;
+  }
+  .right .inquiry {
+    @apply w-[760px] mt-[50px] mb-[100px] mx-0;
+  }
+  /*products_zircos-e1*/
+  #container .products_top {
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_3840,f_auto/v1677989415/bioden/product_top_f06brw) no-repeat 0 0;
+    @apply w-full h-[145px] relative mx-auto my-0 border-b-[#a29e9e] border-b border-solid bg-cover;
+  }
+  #container #content .products_left ul .left_menu_t {
+    @apply text-white;
+    background: #2368a8;
+  }
+  #container #content .products_left ul .on a {
+    @apply text-[#2368a8];
+  }
+  #container #content .products_left ul .li:hover {
+    @apply text-[#2368a8];
+  }
+  .zirconia_block1 {
+    @apply w-[775px] h-auto;
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_449,f_auto/v1677989416/bioden/zirconia_block_img_lxergu)
+      no-repeat top right;
+  }
+  .zirconia_block1 .zirconia_b_p1 {
+    @apply w-[385px] h-auto text-lg leading-[1.4em] pt-[43px];
+  }
+  .zirconia_block1 .zirconia_b_p1 .blue {
+    @apply text-[#2368a8];
+  }
+  .zirconia_block1 .zirconia_b_p2 {
+    @apply w-[360px] h-[50px] text-[15px] leading-[1.4em] text-[#868585];
+  }
+  .zirconia_block1 .zirconia_b_p3 {
+    @apply w-auto h-10 text-[17px] leading-10 text-[#055baa] mt-[100px];
+  }
+  .zirconia_block1 .zirconia_b_p3 .big {
+    @apply text-3xl mr-2.5;
+  }
+  .zirconia_block1 #zirconia_block {
+    @apply w-[758px] mt-[30px];
+  }
+  .zirconia_block2 {
+    @apply mt-10 mb-20;
+  }
+  .zirconia_block2 .z_block2_box {
+    @apply w-[759px] h-[175px] mb-5;
+  }
+  .zirconia_block2 .z_block2_box img {
+    @apply float-left;
+  }
+  .zirconia_block2 .z_block2_box table {
+    @apply float-right w-[534px];
+  }
+  .zirconia_block2 .z_block2_box table tr {
+    @apply h-[30px] border-b-[#e3e2e2] border-b border-solid;
+  }
+  .zirconia_block2 .z_block2_box table tr th {
+    @apply w-[273px] text-black text-sm text-center border-t-black border-t border-solid;
+    background: #f3f3f4;
+  }
+  .zirconia_block2 .z_block2_box table tr td {
+    @apply text-sm text-[#444444] indent-[65px];
+  }
+  .zirconia_block2 .z_block2_box table tr .border_r {
+    @apply w-[400px] text-left indent-[65px] border-r-[#e3e2e2] border-r border-solid;
+  }
+  .zirconia_block2 .z_block2_line {
+    @apply w-[759px] h-px;
+    background: #adadad;
+  }
+  .zirconia_products {
+    @apply mt-10 mb-20;
+  }
+  .zirconia_products .b_p3 {
+    @apply w-auto h-10 text-[17px] leading-10 text-[#055baa] mt-[100px] mb-5;
+  }
+  .zirconia_products .b_p3 .big {
+    @apply text-3xl mr-2.5;
+  }
+  .zirconia_products .zirconia_products_inner {
+    @apply w-[759px] h-[175px] mb-5;
+  }
+  .zirconia_products .zirconia_products_inner img {
+    @apply float-left;
+  }
+  .zirconia_products .zirconia_products_inner table {
+    @apply float-right w-[534px];
+  }
+  .zirconia_products .zirconia_products_inner table tr {
+    @apply h-[30px] border-b-[#e3e2e2] border-b border-solid;
+  }
+  .zirconia_products .zirconia_products_inner table tr th {
+    @apply w-[273px] text-black text-sm text-center border-t-black border-t border-solid;
+    background: #f3f3f4;
+  }
+  .zirconia_products .zirconia_products_inner table tr td {
+    @apply text-sm text-[#444444] indent-[65px];
+  }
+  .zirconia_products .zirconia_products_inner table tr .border_r {
+    @apply w-[400px] text-left indent-[65px] border-r-[#e3e2e2] border-r border-solid;
+  }
+  .zirconia_products .z_block2_line {
+    @apply w-[759px] h-px;
+    background: #adadad;
+  }
+  /*products_zircos-e2*/
+  .aqua_coloring {
+    @apply w-[812px] h-auto;
+  }
+  .aqua_coloring .aqua_c_p1 {
+    @apply w-[490px] h-20 text-lg leading-[1.4em] pt-[43px];
+  }
+  .aqua_coloring .aqua_c_p2 {
+    @apply w-[350px] h-[50px] text-lg leading-[1.4em] text-[#868585];
+  }
+  .aqua_coloring .aqua_c_p2 .blue {
+    @apply text-[#2368a8];
+  }
+  .aqua_coloring .aqua_c_line {
+    @apply w-[759px] h-px mt-[500px];
+    background: #adadad;
+  }
+  .aqua-c_img2 {
+    @apply w-[759px] h-[290px] mt-[50px] mb-[70px] mx-0;
+  }
+  .aqua-c_img2 .aqua-c_p1 {
+    @apply w-[295px] h-[50px] leading-[50px] text-center text-lg float-left font-[bold] mr-[60px];
+  }
+  .aqua-c_img2 .aqua-c_p2 {
+    @apply w-[400px] h-[50px] leading-[50px] text-center text-lg float-left font-[bold];
+  }
+  .aqua_c_table {
+    @apply w-[759px] h-auto;
+  }
+  .aqua_c_table h4 {
+    @apply text-[21px] text-black;
+  }
+  .aqua_c_table table {
+    @apply mt-[25px] border-t-black border-b-[#b9b7b7] border-t border-solid border-b;
+  }
+  .aqua_c_table table th {
+    @apply w-[205px] text-[17px] text-center text-black;
+    background: #f3f3f4;
+  }
+  .aqua_c_table table td {
+    @apply h-8 text-sm text-[#5b5b5b] border-b-[#b9b7b7] border-b border-solid;
+  }
+  .aqua_c_table .table1 {
+    @apply w-[759px] h-[125px];
+  }
+  .aqua_c_table .table1 td {
+    @apply indent-[45px];
+  }
+  .aqua_c_table .table2 {
+    @apply w-[759px] h-[60px];
+  }
+  .aqua_c_table .table2 td {
+    @apply leading-[1.5em] pl-[45px];
+  }
+  .aqua_c_table dl {
+    @apply w-full h-10 leading-10 mt-[25px] border-t-black border-b-[#b9b7b7] border-t border-solid border-b;
+  }
+  .aqua_c_table dl dd {
+    @apply w-auto h-10 leading-10 text-base font-[bold] pl-5;
+  }
+  .aqua_c_table .table3 {
+    @apply w-[759px] h-[30px];
+  }
+  .aqua_c_table .table3 td {
+    @apply indent-[45px];
+  }
+  /*products_zircos-e3*/
+  .etching_solution1 {
+    @apply w-[775px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_197,f_auto/v1677989409/bioden/etching_s_img1_mddopm)
+      no-repeat 560px 28px;
+  }
+  .etching_solution1 .etching_s_p1 {
+    @apply w-[500px] h-[150px] text-lg leading-[1.4em] pt-[43px];
+  }
+  .etching_solution1 .etching_s_p1 .blue {
+    @apply text-[#2368a8];
+  }
+  .etching_solution1 .etching_s_p2 {
+    @apply w-[500px] h-[100px] text-[15px] leading-[1.4em] text-[#868585] mt-5;
+  }
+  .etching_solution1 .etching_s_p3 {
+    @apply w-[360px] h-10 text-[17px] leading-10 text-[#055baa];
+  }
+  .etching_solution1 .etching_s_p3 .big {
+    @apply text-3xl mr-2.5;
+  }
+  .etching_solution1 #etching_s_img2 {
+    @apply w-[758px];
+  }
+  .etching_solution1 .etching_s_line {
+    @apply w-[759px] h-px mt-[25px];
+    background: #adadad;
+  }
+  .add {
+    @apply indent-[25px] leading-[1.2em] mt-[30px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_16,f_auto/v1677989415/bioden/square_icon_yempns) no-repeat 0 0;
+  }
+  .etching_solution2 {
+    @apply w-[775px] h-[450px];
+  }
+  .etching_solution2 ul {
+    @apply text-black pl-2.5;
+  }
+  .etching_solution2 ul .ul_t {
+    @apply block mb-5;
+  }
+  .etching_solution2 ul li {
+    @apply h-[27px] text-[#444444];
+  }
+  .etching_solution2 ul .red {
+    @apply text-[#b7604a];
+  }
+  .etching_solution2 .etching_s_ul1 {
+    @apply text-xl mb-[45px];
+  }
+  .etching_solution2 .etching_s_ul1 li {
+    @apply text-[15px];
+  }
+  .etching_solution2 .etching_s_ul2 {
+    @apply text-xl;
+  }
+  .etching_solution2 .etching_s_ul2 li {
+    @apply text-[15px];
+  }
+  .etching_solution2 .etching_s_line {
+    @apply w-[759px] h-px mt-[25px];
+    background: #adadad;
+  }
+  .etching_solution2 .odd {
+    @apply indent-[10px];
+  }
+  #Zirconia-milling-tools {
+    @apply block border mt-[50px] border-solid border-[#c7cacf];
+  }
+  /*products_zircos-com1*/
+  .zircos_flow {
+    @apply w-[775px] h-[750px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_767,f_auto/v1677989417/bioden/zircoscom-flow_v82hco)
+      no-repeat left bottom;
+  }
+  .zircos_flow .flow_p1 {
+    @apply w-[450px] h-[150px] text-lg leading-[1.6em] text-[#444444] mt-[42px];
+  }
+  /*products_zircos-com2*/
+  .zircos_hard {
+    @apply w-[775px] h-[700px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_773,f_auto/v1677989417/bioden/zircoscom-hard_qqepg7)
+      no-repeat left bottom;
+  }
+  .zircos_hard .hard_p1 {
+    @apply w-[450px] h-[150px] text-lg leading-[1.6em] text-[#444444] mt-[42px];
+  }
+  /*products_zircos-com3*/
+  .zircos_universal {
+    @apply w-[775px] h-[730px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_769,f_auto/v1677989417/bioden/zircoscom-universal_k2kwe3)
+      no-repeat 0 bottom;
+  }
+  .zircos_universal .universal_p1 {
+    @apply w-[430px] h-[120px] text-lg leading-[1.6em] text-[#444444] mt-[42px];
+  }
+  .shade {
+    @apply w-full mt-[50px];
+  }
+  .shade p {
+    @apply w-full leading-[50px] text-2xl text-[#055baa] font-[bold];
+  }
+  .shade ul {
+    @apply w-full mb-2.5;
+  }
+  .shade ul li {
+    @apply w-[100px] h-10 leading-10 float-left text-center mr-2.5 border-2 border-solid border-[#e4e4e4];
+  }
+  /*products_jig-gel*/
+  .jig-gel1 {
+    @apply w-[775px] h-[540px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_774,f_auto/v1677989413/bioden/jig-gel1_t8sjo7) no-repeat 0 0;
+  }
+  .jig-gel1 .jig-gel_p1 {
+    @apply w-[480px] h-[120px] text-lg leading-[1.6em] text-[#444444] mt-[42px];
+  }
+  .jig-gel2 {
+    @apply w-[760px] h-[260px] mt-[35px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_186,f_auto/v1677989413/bioden/jig-gel2_vduogl) no-repeat right
+      bottom;
+  }
+  .jig-gel2 .ul_title {
+    @apply h-[50px] leading-[50px] text-xl text-black mb-[30px];
+  }
+  .jig-gel2 li {
+    @apply leading-[30px];
+  }
+  .jig-gel2 li .space {
+    @apply text-sm pl-5;
+  }
+  .jig-gel_line {
+    @apply w-[760px] h-px mt-[25px];
+    background: #adadad;
+  }
+  #Sintering-Furnace {
+    @apply block border mt-[50px] border-solid border-[#c7cacf];
+  }
+  /*company_certificated*/
+  .certificated {
+    @apply w-[758px] h-[230px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_374,f_auto/v1677989408/bioden/certificated_img_dwkliq)
+      no-repeat top right;
+  }
+  #container #content .right .certificated .certificated_p1 {
+    @apply w-[370px] h-20 text-[25px] leading-[1.4em] pt-[43px];
+  }
+  #container #content .right .certificated .certificated_p2 {
+    @apply w-[500px] h-10 text-xl leading-[1.4em] mt-[100px];
+  }
+  #container #content .right .certificated .green {
+    @apply text-[#269885];
+  }
+  #container #content .right .certificated .cer_p {
+    @apply h-[50px] leading-[58px] text-[25px];
+  }
+  #container #content .right .certificated .cer_box {
+    @apply w-[765px] h-[272px] text-xl leading-[1.5em] mb-[55px];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_193,f_auto/v1677989408/bioden/certificated_bg_oh0in6)
+      no-repeat 0 20px;
+  }
+  #container #content .right .certificated .cer_box .cer_title {
+    @apply w-[180px] h-[250px] float-left pt-[35px];
+  }
+  #container #content .right .certificated .cer_box .cer_title li {
+    @apply w-[180px] h-[60px] text-xl leading-[1.5em] text-left mb-[15px] pl-5;
+  }
+  #container #content .right .certificated .cer_box .cer_title .cer_t3 {
+    @apply mb-0 pt-[3px];
+  }
+  #container #content .right .certificated .cer_box .cer_cont {
+    @apply w-[540px] h-[230px] float-left pl-[35px] pt-[35px];
+  }
+  #container #content .right .certificated .cer_box .cer_cont li {
+    @apply w-[540px] text-base leading-[1.5em] mb-[15px];
+  }
+  #container #content .right .certificated .cer_box .cer_cont .cer_c1 {
+    @apply h-20 mb-0;
+  }
+  #container #content .right .certificated .cer_box .cer_cont .cer_c2 {
+    @apply h-[53px] mb-0;
+  }
+  #container #content .right .certificated .cer_box .cer_cont .cer_c3 {
+    @apply h-[100px] mb-0 pt-0.5;
+  }
+  #container #content .right .certificated2 {
+    @apply w-[763px] mt-0 mb-[60px] mx-0 pt-5 pb-[100px] px-0;
+  }
+  /*customer*/
+  #container .customer_top {
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_3840,f_auto/v1677989409/bioden/customer_top_ew7viy) no-repeat 0 0;
+    @apply w-full h-[145px] relative mx-auto my-0 border-b-[#a29e9e] border-b border-solid bg-cover;
+  }
+  #container #content .customer_left ul .left_menu_t {
+    @apply text-white;
+    background: #be5e11;
+  }
+  #container #content .customer_left ul .on a {
+    @apply text-[#be5e11];
+  }
+  #container #content .customer_left ul .li:hover {
+    @apply text-[#be5e11];
+  }
+  /*customer_downloads*/
+  #container #content .right .msds {
+    @apply w-full;
+  }
+  #container #content .right .msds .safety_d {
+    @apply w-full mt-[50px];
+  }
+  #container #content .right .msds .safety_d .download_t {
+    @apply w-full h-[35px] leading-[35px] text-[22px] text-[#c6722f];
+  }
+  #container #content .right .msds .safety_d ul {
+    @apply w-full h-[52px] mt-[15px];
+  }
+  #container #content .right .msds .safety_d ul li {
+    @apply w-[366px] h-[52px] border float-left text-[17px] text-center leading-[52px] border-solid border-[#aba4a4];
+  }
+  #container #content .right .msds .safety_d ul li a {
+    @apply block w-full h-[52px];
+  }
+  #container #content .right .msds .safety_d .space {
+    @apply mr-[27px];
+  }
+  #container #content .right .line {
+    @apply w-[764px] h-1 float-left mt-20 mb-[200px] mx-0 border-t-[#6f6f6f] border-t border-solid;
+    background: #ebebeb;
+  }
+  #container #content .right .catalog {
+    @apply w-full;
+  }
+  #container #content .right .catalog .catalog_con {
+    @apply w-full mt-20;
+  }
+  #container #content .right .catalog .catalog_con .download_t {
+    @apply w-full h-[35px] leading-[35px] text-[22px] text-[#c6722f];
+  }
+  #container #content .right .catalog .catalog_con ul {
+    @apply w-full mt-[15px];
+    /*margin-top:15px;*/
+  }
+  #container #content .right .catalog .catalog_con ul li {
+    @apply w-[366px] h-[52px] text-[17px] leading-[52px] border float-left mb-[15px] border-solid border-[#aba4a4];
+    background: url(https://res.cloudinary.com/dfd9pdmuf/image/upload/w_27,f_auto/v1677989409/bioden/download_icon_din55n) no-repeat 247px
+      12px;
+  }
+  #container #content .right .catalog .catalog_con ul li a {
+    @apply block w-full h-[52px];
+  }
+  #container #content .right .catalog .catalog_con ul li p {
+    @apply w-[235px] text-right;
+  }
+  #container #content .right .catalog .catalog_con .space {
+    @apply mr-[27px];
+  }
+  /*customer_instruction-for-use*/
+  #container #content .right .instruction_f {
+    @apply w-full float-left;
+  }
+  #container #content .right .instruction_f .instruction {
+    @apply w-full mt-[100px];
+  }
+  #container #content .right .instruction_f .instruction ul {
+    @apply w-full h-[52px] mt-[15px];
+  }
+  #container #content .right .instruction_f .instruction ul li {
+    @apply w-[366px] h-[52px] border float-left text-[17px] text-center leading-[52px] border-solid border-[#aba4a4];
+  }
+  #container #content .right .instruction_f .instruction ul li a {
+    @apply block w-full h-[52px];
+  }
+  #container #content .right .instruction_f .instruction .space {
+    @apply mr-[27px];
+  }
+  .board_wrap_in {
+    @apply w-[756px] mt-[65px] mb-[150px] mx-0;
+  }
+  /*company_CI*/
+  .right .ci {
+    @apply w-[758px] mt-[30px] pb-[150px];
+  }
 }

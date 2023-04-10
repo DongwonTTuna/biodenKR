@@ -1,0 +1,41 @@
+{
+  "product": {
+    "aqua": {
+      "aqua_c_p1": "A, B, C, D 계열의 16종류의 Dentin 색상, 16종류의 Enamel 색상, 8종류의 Effect 색상, 2종류의 Opaque 색상을 생산하고 있습니다.",
+      "aqua_c_p2_1": "아쿠아 베이스로 염산이 포함되지 않아",
+      "aqua_c_p2_2": "하고 장비를 부식시키지 않습니다.",
+      "blue": "인체에 무해",
+      "h4": "Aqua Coloring Liquid 구성"
+    },
+    "etching": {
+      "add": "ZIRCOS-E 사용 설명서는 Customer 메뉴바에서 다운 받을 수 있습니다.",
+      "etching_s_p1": "는 액상솔루션을 이용해 지르코니아 표면에 이온을 활성화시켜 porcelain과의 접착강도를 강화시키고 박리현상을 방지하는 표면처리 기술 Solution 입니다.",
+      "etching_s_p2": "이 기술을 응용하여 full zir 표면에 porcelain을 0.3mm 올려서 지르코니아 특유의 자개장 색을 제거할 수 있어 탁월한 shade를 재현할 수 있습니다.",
+      "title": "에칭 솔루션"
+    },
+    "hycera": [
+      "v1677989410/bioden/hycera1_gjjzdt",
+      "v1677989411/bioden/hycera2_v46x7l",
+      "v1677989411/bioden/hycera3_lqhmo5"
+    ],
+    "jig-gel": {
+      "lowprice": "(1 SET에 6개 들어 있고 내용량의 합계는 약 100G으로써 이는 패턴레진 1통 값과 같습니다)",
+      "p1": "주사식 투입방법으로 제작된 광중합형 레진으로서 임플란트 지그를 쉽게 제작할 수 있는 제품입니다. 기존에 레진 파우더를 붓으로 이용하여 용액에 흡수시킨 후 임플란트 어버트먼트에 수없이 떠올리는 방식에서 탈피한 획기적인 제품입니다."
+    },
+    "zircos-com": {
+      "flow_1": "Zirconia filler가 함유되어 강도와 내마모성이 뛰어난 Hybrid 제품으로써 작업성이 탁월한 점도를 지니고 있습니다.",
+      "flow_2": "바이오덴은 Shade Guide의 모든 색상을 생산하고 있습니다.",
+      "hard_1": "Zirconia filler가 함유되어 강도와 내마모성이 뛰어난 Hybrid 제품으로써 작업성이 탁월한 점도를 지니고 있습니다.",
+      "hard_2": "바이오덴은 Shade Guide의 모든 색상을 생산하고 있습니다.",
+      "universal_1": "Zirconia filler가 함유되어 강도와 내마모성이 뛰어난 Hybrid 제품입니다.",
+      "universal_2": "One Body 개념의 Enamel resin으로 Indirect resin Inlay 제작 시 쉽고 빠르게 사용이 편리합니다."
+    },
+    "zircos-e": {
+      "first": "은 200ton의 높은 압력 성형을 통해 접착강도, 부착력, 내충격성, 내마모성 등 물리적 특성을 향상시켜 매우 쉽게 블록가공을 할 수 있는 제품입니다.",
+      "firstblue": "ZIRCOS-E 블록",
+      "second": "Shade 블록은 지르코니아 분말에 세라믹 이온 코팅 처리와 물리적 기술을 향상시켜 생체적합성이 뛰어난 제품입니다.",
+      "third": "A,B,C,D 계열의 각종 블록은 항상 생산되고 있습니다.",
+      "zircosblocktitle": "지르코니아 E 블록"
+    }
+  }
+}
