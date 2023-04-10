@@ -18,7 +18,7 @@ const Footer =  component$(() => {
           <br />
           <span>  {t("common.footer.tel@@Tel : 031-765-2840")} |</span>
           {t("common.footer.fax@@Fax : 031-765-2841")}
-          <span>|</span>e-mail : bio0790@daum.net
+          <span>|</span>e-mail : biodenzircose@gmail.com
           <span class="text-[10px]">
             COPYRIGHT (C) BIO DEN CORPORATION. ALL RIGHTS RESERVER.
           </span>
